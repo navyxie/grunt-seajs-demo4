@@ -1,0 +1,4 @@
+<div class="item">
+    <div class="imgContainer" style="height:<%= imgShowH %>px"><a class="clickUrl" data-url=<%= cUrl %> href="javascript:;"><img data-src=<%= (this.model.get("uPic") ? uPic : pUrl) %> width="100%" height=<%=imgShowH %> /></a></div>
+    <div class="itemBottom"><span class="likeContainer"><em class="likeBtn unLikeBtn"></em><i>10</i></span><span>￥</span><span><%= parseInt(iPrice) %></span><%=(isBY ? ('<span class="BY">包邮<span>') : "") %></div>
+</div>

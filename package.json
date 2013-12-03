@@ -1,0 +1,24 @@
+{
+     "name" : "cbdapp",
+     "version" : "1.0.0",
+     "author" : "Navy",
+     "devDependencies" : {
+        "grunt" : "0.4.1",
+        "grunt-contrib-jshint": "~0.7.2",
+        "grunt-cmd-transport" : "0.4.0",
+        "grunt-cmd-concat" : "0.2.5",
+        "grunt-contrib-uglify" : "0.2.7",
+        "grunt-contrib-clean" : "0.5.0",
+        "grunt-contrib-imagemin" : "0.4.0",
+        "grunt-contrib-copy":"0.4.1",
+        "grunt-contrib-watch":"0.5.3"
+     },
+     "spm": {
+          "alias": {
+            "jquery": "sea-modules/jquery/jquery/2.0.3/jquery-debug",
+            "jqmobile": "sea-modules/jquery/jquerymobile/1.3.2/jquerymobile-debug",
+            "underscore": "sea-modules/gallery/underscore/1.5.2/underscore-debug",
+            "backbone": "sea-modules/gallery/backbone/1.1.0/backbone-debug"
+          }
+     }
+}

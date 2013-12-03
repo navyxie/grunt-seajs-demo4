@@ -1,0 +1,339 @@
+ .ui-page {  
+	backface-visibility: hidden;  
+	-webkit-backface-visibility: hidden; /* Chrome and Safari */  
+	-moz-backface-visibility: hidden; /* Firefox */  
+}  
+*{
+	margin: 0;
+	padding: 0;
+	font-family: "微软雅黑";
+	font-size: 14px;
+}
+body{
+	background: #F1E4EB;
+}
+.ui-mobile, .ui-mobile body{
+	height:auto;
+	overflow-y: scroll;
+}
+img{
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	user-select:none;
+}
+a{
+	text-decoration: none;
+	color: #fff;
+}
+ul,li{
+	list-style:none;
+}
+.appContent{
+	width: 100%;
+	max-width: 640px;
+	margin: auto;
+	min-height: 800px;	
+	padding: 0;
+	background: #F1E4EB;
+}
+.header,.footer{
+	border: none;
+	padding: 0;
+	margin:0;
+	position: fixed;
+	left:0;
+	z-index:9;
+}
+.header{
+	width: 100%;
+	height: 56px;
+	text-align: center;
+	color: #fff;
+	font-size: 20px;
+	background: #F8E9F0;
+	word-spacing: 5px;
+	letter-spacing:5px;
+	-webkit-box-shadow: 0 1px 4px rgba(92,32,48,.3);
+	-moz-box-shadow: 0 1px 4px rgba(92,32,48,.3);
+	box-shadow: 0 1px 4px rgba(92,32,48,.3);
+	top:0;
+	overflow: hidden;
+	ul{
+		li{
+			display: inline-block;
+			border-right: 1px solid #DDB9C5;
+			height: 36px;
+			line-height: 36px;
+			margin-top: 10px;
+			padding: 0 20px;
+			a{
+				font-size: 16px;
+				color: #360617;
+				padding: 10px 16px;
+				font-weight: normal;
+				text-shadow: none;
+			}
+		}
+		li:last-child{
+			border-right: none;
+		}
+		.selected{
+			a{
+				color:#fff;
+				padding: 6px 12px;
+				border-radius: 5px;
+				-webkit-border-radius: 5px;
+				-moz-border-radius: 5px;
+				border-radius: 5px;
+				background-color: #ff668f;
+				-webkit-box-shadow: inset 0 0 7px rgba(102,41,57,.56);
+				-moz-box-shadow: inset 0 0 7px rgba(102,41,57,.56);
+				box-shadow: inset 0 0 7px rgba(102,41,57,.56);
+				border: solid 1px #fff;
+			}
+		}
+	}
+}
+.appPage{
+	z-index: 1;
+	// padding: 52px 0 0 0;
+}
+#pageList{
+	min-height: 800px;
+	overflow-y: hidden;
+	li{
+		min-height: 800px;
+		// background: url(../images/loading_bg.gif) center 100px no-repeat;
+		.journalContainer{
+			.jBanner{
+				position: relative;
+				text-align: center;
+				min-height: 160px;
+				background: #F1E4EB;
+				img{
+					display: block;
+					max-width: 100%;
+					margin: auto;
+				}
+				.jDate{
+					display: inline-block;
+					z-index: 2;
+					width: 44px;
+					height: 44px;
+					position: absolute;
+					left: 0;
+					top: 5px;
+					// background: #666;
+					color: #ff7fa1;
+					// border-radius: 70px;
+					// -webkit-border-radius: 70px;
+					// -moz-border-radius: 70px;
+					// border-radius: 70px;
+					// opacity: 0.6;
+					text-align: center;
+					.jDay{
+						font-size: 22px;
+						font-weight: bold;		
+						height: 24px;
+						line-height: 24px;		
+					}
+					.jMonth{
+						font-size: 16px;
+						// padding-top: 10px;
+					}
+				}
+			}
+			.jTitle{
+				width: 100%;
+				// height: 60px;
+				padding: 5px 0;
+				position: absolute;
+				z-index: 1;
+				bottom: 0;
+				left: 0;
+				background: #fff;
+				opacity: 0.8;
+				border-top: 1px solid #fff;
+				.titleContainer{
+					margin-left: 36px;
+				}
+				p{
+					overflow: hidden;
+					padding:0 10px 2px 10px;
+					text-align: left;
+					text-overflow: ellipsis;
+					-webkit-text-overflow: ellipsis;
+					-moz-text-overflow: ellipsis;
+				}
+				.bTitle{
+					font-size: 20px;
+					font-weight: bold;
+					color: #360919;					
+					height: 24px;
+					line-height: 24px;
+					text-indent: -12px;
+				}
+				.sTitle{
+					font-size: 16px;
+					color: #310E12;
+					height: 16px;
+					line-height: 18px;
+				}
+			}
+			.jContent{
+				padding: 10px;
+				padding-top: 0;
+				overflow: hidden;
+				.waterCol{
+					float: left;
+					width: 49%;
+					.waterFallItem{
+						margin: 10px 0;
+						background: #fff;
+						-moz-border-radius: 14px;
+						border-radius: 14px;
+						-webkit-box-shadow: 0 2px 11px rgba(51,18,6,.39);
+						-moz-box-shadow: 0 2px 11px rgba(51,18,6,.39);
+						box-shadow: 0 2px 11px rgba(51,18,6,.39);
+						.imgContainer{
+							width: 100%;
+							overflow: hidden;	
+							background: url(../images/logo.png) #fff center center no-repeat;		
+							border-top-right-radius: 10px;
+							border-top-left-radius: 10px;	
+							img{
+								width: 100%;
+								border-top-right-radius: 10px;
+								border-top-left-radius: 10px;
+							}
+						}
+						.itemBottom{
+							padding: 0 5px;
+							height: 24px;
+							line-height: 24px;
+							color: #FC5A85;
+							.BY{
+								margin-left: 5px;
+								color: #360b17
+							}
+							.likeContainer{
+								display: none;
+								float: right;
+								margin-right: 10px;
+								.likeBtn{
+									display: inline-block;
+									width: 25px;
+									height: 21px;
+									-webkit-background-size:25px 21px; /* 老版本的 Firefox */
+									-moz-background-size:25px 21px; /* 老版本的 Firefox */
+									background-size:25px 21px;
+								}
+								.likedBtn{
+									background-image: url(../images/after_small.png);
+								}
+								.unLikeBtn{
+									background-image: url(../images/before_small.png);
+								}
+								i{
+									vertical-align: 6px;
+									font-style: normal;
+									color: #360b17;
+									margin-left: 5px;
+								}
+							}
+						}
+					}
+				}
+				.firstCol{
+					// padding: 0 2% 0 4%
+				}
+				.lastedCol{
+					float: right;
+				}
+			}
+		}
+	}
+}
+#gloabLoading{
+    display: none;
+    position: fixed;
+    _position:absolute;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px #2a2a2a;
+    -webkit-box-shadow: 2px 2px 2px #2a2a2a;
+    -moz-box-shadow: 2px 2px 2px #2a2a2a;
+    left: 50%;
+    top:50%;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-left: -50px;
+    margin-top: -50px;
+    z-index: 99999;
+    background: #000;
+    opacity: 0.7;
+    filter:alpha(opacity=70);
+    color: #fff;
+    img{
+        margin-top: 15px;
+    }
+}
+#likeJounalBtn{
+	position: fixed;
+	right: 10px;
+	bottom: 50%;
+	margin-bottom: -90px;
+	width: 60px;
+	height: 60px;
+	-webkit-background-size:60px 60px; /* 老版本的 Firefox */
+	-moz-background-size:60px 60px; /* 老版本的 Firefox */
+	background-size:60px 60px;
+	display: none;
+}
+.unLikeJounalBtn{
+	background-image:url(../images/before_big.png);
+}
+.likedJounalBtn{
+	background-image:url(../images/after_big.png);
+}
+.dialogTip{
+	background: #000;
+	opacity: 0.7;
+	color: #fff;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	position: fixed;
+	bottom: 100px;
+	left: 50%;
+	margin-left: -50px;
+	z-index: 99;
+	text-align: center;
+	border-radius: 5px;
+}
+#firstGuide{
+	width: 100%;
+	height: 100%;
+	display: none;
+	position: fixed;
+	top:0;
+	left: 0;
+	background: #000;
+	opacity: 0.7;
+	overflow-y: hidden;
+	text-align: center;
+	div{		
+		max-width: 320px;
+		margin: auto;
+		height: 100%;
+		vertical-align: middle;
+		position: relative;
+		img{
+			width: 100%;
+			position: absolute;
+			left: 0;
+			top:50%;
+			margin-top: -100px;
+		}
+	}
+}

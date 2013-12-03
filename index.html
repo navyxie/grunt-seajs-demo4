@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head id="head">
+    <meta charset="UTF-8" />
+    <meta name="viewport" id="chaoBaiDa" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="Description" content="潮百搭" />
+    <title>潮百搭</title>
+    <link rel="stylesheet" type="text/css" href="./static/jquerymobile/jquery.mobile-1.3.2.min.css" />
+    <link rel="stylesheet" type="text/css" href="./static/src/stylesheets/index.css" />
+</head>
+<body>
+    <div id="gloabLoading"><img src="./static/src/images/loading.gif" class="loading"/><br /><span class="loadingTxt">loading...</span></div> <div data-role="page" id="index" class="appPage">
+        <!-- <header data-role="header" class="header"><ul id="titleNav"></ul></header> -->
+        <div data-role="content" class="appContent">
+            <ul id="pageList"></ul>
+        </div>   
+        <div id="likeJounalBtn" class="unLikeJounalBtn"></div>  
+        <div id="firstGuide" class="firstGuide"><div><img src="./static/src/images/guide.png" /></div></div>       
+    </div>
+    <script src="./sea-modules/seajs/seajs/2.1.1/sea.js" id="seajsnode"></script>
+    <script>
+        var prefix = "cbdapp",version=1;
+        window.appConfig = {
+            debug:true,
+            appHost:'/mobileapp'
+        }
+        if(window.appConfig.debug === false){
+            window.appConfig.appHost = 'http://www.chaobaida.com/mobileapp';
+        }   
+        // Set configuration
+        var seajsConfig = {
+            base: "./",
+            alias: {
+                "jquery": "sea-modules/jquery/jquery/2.0.3/jquery-debug",
+                "jqmobile": "sea-modules/jquery/jquerymobile/1.3.2/jquerymobile-debug",
+                "underscore": "sea-modules/gallery/underscore/1.5.2/underscore-debug",
+                "backbone": "sea-modules/gallery/backbone/1.1.0/backbone-debug"
+                // "jqhammer": "jquery/jqueryhammer/1.0.6/jquery.hammer.js"
+            },
+            vars:{
+                jsPre:'.min'
+            },
+            //添加版本号，清楚缓存
+            map:[
+                [/^.*$/,function(url) {return url += (url.indexOf('?') === -1 ? '?' : '&') + 'ts=' + version;}]
+            ]
+        }
+        if(window.appConfig.debug === false){
+            seajsConfig.alias['cordova'] = "sea-modules/phonegap/cordova/cordova-debug";
+            seajsConfig.alias['childbrowser'] = "sea-modules/phonegap/plugins/phonegap-childbrowser-debug";
+            seajsConfig.alias['toast'] = "sea-modules/phonegap/plugins/phonegap-toast-debug";
+            seajsConfig.alias['message'] = "sea-modules/phonegap/plugins/phonegap-cbdmessage-debug";
+        }
+        seajs.config(seajsConfig);
+        // For development
+        if (location.href.indexOf("?dev") > 0) {
+            seajs.use("./static/src/javascripts/main");
+        }
+        // For production
+        else {
+            seajs.use("appjs/main");
+        }
+        function login(name){
+            setItem('klg-cbd-name',name);
+            alert('登陆成功！');
+        }
+        function logout(flag){
+            if(flag){
+                removeItem('klg-cbd-name');
+                alert('成功退出登陆！');
+            }
+        }
+        function setItem(key,val){
+            window.localStorage.setItem(prefix+key,JSON.stringify(val));
+        }
+        function getItem(key){
+            return JSON.parse(window.localStorage.getItem(prefix+key));
+        }
+        function removeItem(key){
+            window.localStorage.removeItem(prefix+key);
+        }
+    </script> 
+</body>
+</html>
